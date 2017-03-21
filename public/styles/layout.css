@@ -37,3 +37,7 @@ body {
   height: 500%;
   padding-top: 5%;
 }
+
+.redText {
+  color: red;
+}

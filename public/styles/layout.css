@@ -30,12 +30,13 @@ body {
 }
 
 .container {
-  width: 450px;
+  width: 500px;
   margin: auto;
   background-color: #FFF;
   margin-top: 80px;
-  height: 500%;
   padding-top: 5%;
+  overflow: auto;
+
 }
 
 .redText {

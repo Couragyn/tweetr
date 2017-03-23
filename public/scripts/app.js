@@ -15,6 +15,7 @@ $(document).ready(function() {
 
     if (content.trim().length < 1 || content.length > 140) {
       $('#submitError').removeClass('hidden');
+      ($('.counter').text('140'))
     } else {
       $.ajax({
         url: '/tweets',

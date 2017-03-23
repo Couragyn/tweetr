@@ -25,7 +25,6 @@
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/app.js"></script>
-
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
     <script src="https://use.fontawesome.com/b7c9b9a28d.js"></script>
   </head>
@@ -36,12 +35,13 @@
     <nav id="nav-bar">
       <img class="logo" src="/images/bird.png">
       <span class="header">Tweeter</span>
+      <button id="toggleCompose">Compose</button>
     </nav>
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-        <form action="/tweets" method="POST">
+        <form id="createTweet" action="/tweets" method="POST">
           <textarea name="text" id="content" placeholder="What are you humming about?"></textarea>
           <input type="submit" value="Tweet">
           <span class="counter">140</span>

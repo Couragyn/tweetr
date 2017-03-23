@@ -25,3 +25,13 @@
   height: 80px;
   line-height: 250%;
 }
+
+#nav-bar button {
+  float: right;
+  margin-top: 15px;
+  box-shadow: 3px 3px;
+}
+
+#nav-bar button:hover {
+  box-shadow: none;
+}

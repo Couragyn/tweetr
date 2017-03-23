@@ -5,6 +5,8 @@
   margin-left: 2em;
   margin-right: 2em;
   position: relative;
+  word-wrap: break-word;
+
 }
 
 #tweets-container article {
@@ -54,10 +56,6 @@
 
 #tweets-container footer div {
   float: right;
-}
-
-.hidden {
-  display: none;
 }
 
 .opaque {

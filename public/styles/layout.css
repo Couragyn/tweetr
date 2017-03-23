@@ -42,3 +42,7 @@ body {
 .redText {
   color: red;
 }
+
+.hidden {
+  display: none;
+}

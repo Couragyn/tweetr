@@ -13,7 +13,7 @@ $(document).ready(function() {
     event.preventDefault();
     let contLen = $('#content').val().length;
     if (contLen < 1 || contLen > 140) {
-      alert("Post must be between 1 and 140 character")
+      $('#submitError').removeClass('hidden');
     } else {
       $.ajax({
         url: '/tweets',
@@ -23,7 +23,8 @@ $(document).ready(function() {
         renderTweets([tweets]);
       }).done(mouseHover)
       .done($('#content').val(''))
-      .done($('.counter').text('140'));
+      .done($('.counter').text('140'))
+      .done($('#submitError').addClass('hidden'));
     }
   })
 

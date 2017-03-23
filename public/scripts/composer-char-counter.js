@@ -14,7 +14,7 @@ $(document).ready(function() {
     } else {
       counter.removeClass('redText');
     }
-
+    // removes error area if character count is correct for tweet
     if (charCount >= 0 && charCount < 140 && (!$('#submitError').hasClass('hidden'))) {
       $('#submitError').addClass('hidden');
     }

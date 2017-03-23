@@ -1,5 +1,7 @@
 "use strict";
 
+// sets up mongoDB
+
 const MongoClient = require("mongodb").MongoClient;
 const MONGODB_URI = "mongodb://localhost:27017/tweeter";
 

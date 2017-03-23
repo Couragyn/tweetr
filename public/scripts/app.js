@@ -5,18 +5,21 @@
  */
 
 $(document).ready(function() {
-
+  // jQuery used to calulate how long ago something was posted
   jQuery("time.timeago").timeago();
 
+  // Sets up for when a tweet is posted
   let $button = $('#content').next();
   $button.on('click', function(event) {
     event.preventDefault();
     let content = $('#content').val();
-
+    // makes sure characters are between 1 and 140
     if (content.trim().length < 1 || content.length > 140) {
+      // if not correct length, shows an error message and resets count
       $('#submitError').removeClass('hidden');
       ($('.counter').text('140'))
     } else {
+      // posts to database and resets to submit area to default
       $.ajax({
         url: '/tweets',
         method: 'POST',
@@ -30,17 +33,18 @@ $(document).ready(function() {
     }
   })
 
+  // when compose is clicked, toggles submit area
   $('#toggleCompose').click(function() {
     $('.new-tweet').slideToggle();
     $('.new-tweet').find('#content').focus();
   });
 
-
+  // /initializes tweets
   loadTweets();
 
 });
 
-
+// changes area when mouse hovers over tweet
 function mouseHover() {
   $('article').mouseover(function() {
     $(this).find('header').removeClass("opaque");
@@ -52,8 +56,9 @@ function mouseHover() {
   });
 }
 
-
+// Creats tweet from form data
 function createTweetElement(tweet) {
+  // sets entered values to variables
   let user = tweet.user;
   let avatar = user.avatars.small;
   let uname = user.name;
@@ -61,6 +66,7 @@ function createTweetElement(tweet) {
   let content = tweet.content.text;
   let date = jQuery.timeago(tweet.created_at);
 
+  // creates the article element that contains tweet
   var $tweet = $('<article>')
     .append($('<header>').addClass('opaque')
     .append($('<img>').attr("src", avatar))
@@ -77,12 +83,14 @@ function createTweetElement(tweet) {
   return $tweet;
 }
 
+// renders the created tweet to index
 function renderTweets(tweets) {
   for (let i = 0; i < tweets.length; i ++) {
     $('#tweets-container').prepend(createTweetElement(tweets[i]));
   }
 }
 
+// Get method for tweets
 function loadTweets() {
   $.ajax({
     url: '/tweets',

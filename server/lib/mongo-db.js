@@ -12,6 +12,7 @@ MongoClient.connect(MONGODB_URI, (err, db) => {
 
   // We have a connection to the "tweeter" db, starting here.
   console.log(`Connected to mongodb: ${MONGODB_URI}`);
+
   module.exports = db;
 
 });

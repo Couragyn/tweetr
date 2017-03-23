@@ -6,6 +6,8 @@
 
 $(document).ready(function() {
 
+  jQuery("time.timeago").timeago();
+
   let $button = $('#content').next();
   $button.on('click', function(event) {
     event.preventDefault();
@@ -54,7 +56,7 @@ function createTweetElement(tweet) {
   let uname = user.name;
   let handle = user.handle;
   let content = tweet.content.text;
-  let date = tweet.created_at;
+  let date = jQuery.timeago(tweet.created_at);
 
   var $tweet = $('<article>')
     .append($('<header>').addClass('opaque')

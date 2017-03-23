@@ -26,12 +26,22 @@
   line-height: 250%;
 }
 
-#nav-bar button {
+#nav-bar a {
   float: right;
-  margin-top: 15px;
-  box-shadow: 3px 3px;
+  margin-top: 10px;
+  width: 150px;
+  height: 60px;
+  background-color: #ddffeb;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: black;
+  color: #68b789;
+  font-size: 70%;
+  line-height: 225%;
+  text-align: center;
 }
 
-#nav-bar button:hover {
-  box-shadow: none;
+#nav-bar a:hover {
+  color: black;
+  background-color: white;
 }

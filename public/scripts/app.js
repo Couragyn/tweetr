@@ -13,7 +13,7 @@ $(document).ready(function() {
     event.preventDefault();
     let content = $('#content').val();
 
-    if (content.length < 1 || content.length > 140 || (content.trim()).length < 1) {
+    if (content.trim().length < 1 || content.length > 140) {
       $('#submitError').removeClass('hidden');
     } else {
       $.ajax({

@@ -19,9 +19,10 @@ $(document).ready(function() {
         data: $('#content').serialize()
       }).done(function(tweets) {
         renderTweets([tweets]);
-      }).done(mouseHover);
+      }).done(mouseHover)
+      .done($('#content').val(''))
+      .done($('.counter').text('140'));
     }
-    $('#content').val('');
   })
 
   $('#toggleCompose').click(function() {

@@ -11,8 +11,9 @@ $(document).ready(function() {
   let $button = $('#content').next();
   $button.on('click', function(event) {
     event.preventDefault();
-    let contLen = $('#content').val().length;
-    if (contLen < 1 || contLen > 140) {
+    let content = $('#content').val();
+
+    if (content.length < 1 || content.length > 140 || (content.trim()).length < 1) {
       $('#submitError').removeClass('hidden');
     } else {
       $.ajax({

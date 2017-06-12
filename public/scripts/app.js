@@ -3,7 +3,6 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-require('dotenv').config();
 
 $(document).ready(function() {
   // jQuery used to calulate how long ago something was posted
